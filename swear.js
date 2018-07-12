@@ -11,7 +11,8 @@ function Swear(x){
 		textAlign(CENTER);
 		textSize(20);
 		fill('#fae')
-		textStyle(BOLD);
+		textFont(swearFont);
+		// textStyle(BOLD);
 		text(this.word,this.x, this.y);
 	}
 

@@ -1,21 +1,18 @@
 function Enemy(speed, times2kill){
-	this.x = random(0,width);
-	this.y = 0;
-	this.r = 15;
-	this.speed = speed;
 	this.times2kill = times2kill;
+	this.r = 30*times2kill;
+	this.y = -this.r;
+	this.x = random(this.r,width-this.r);
+	this.speed = speed;
 	this.isKilled = false;
 
 	this.show = function(){	
 		if(this.times2kill <=0){
 			this.isKilled = true;
-		}
-		if (this.isHit){
-			fill('#fae')
 		} else{
-			fill(255);
+			image(enemyAvatar,this.x,this.y,this.r, this.r);
 		}
-		ellipse(this.x, this.y,this.r*this.times2kill,this.r*this.times2kill);
+		//ellipse(this.x, this.y,this.r*this.times2kill,this.r*this.times2kill);
 	}
 
 	this.move = function(){

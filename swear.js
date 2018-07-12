@@ -4,7 +4,7 @@ function Swear(x){
 	this.r = 20
 	var shapes =['#','@', '&', '%', '!?', "$"];
 	this.word = random(shapes);
-	this.isHit = false
+	this.isGone = false
 
 	this.show = function(){
 		// ellipse(this.x, this.y,this.r,this.r);
@@ -15,8 +15,12 @@ function Swear(x){
 		text(this.word,this.x, this.y);
 	}
 
+
 	this.move = function(){
 		this.y-=2;
+		if(this.y<0){
+			this.isGone = true;
+		}
 	}
 
 

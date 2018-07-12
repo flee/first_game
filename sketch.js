@@ -6,8 +6,11 @@ var score = 0 ;
 var lvlprobs = [1];
 
 function preload(){
-	youAvatar_right = loadImage('img/malechar_red.png');
+	youAvatar_open = loadImage('img/female_head_open.png');
+	youAvatar_closed = loadImage('img/female_head_closed.png');
+    youAvatar_right = loadImage('img/malechar_red.png');
 	youAvatar_left = loadImage('img/malechar_red_left.png');
+	enemyAvatar = loadImage('img/enemy.png');
 }
 function setup(){
 	createCanvas(500,400);
@@ -54,7 +57,7 @@ function draw(){
 	}
 
 	for(var i=swears.length-1; i>=0; i--){
-		if(swears[i].isHit==true){
+		if(swears[i].isGone==true){
 			swears.splice(i, 1);
 		}
 	}
@@ -75,7 +78,7 @@ function draw(){
 			if (distBt<enemies[i].r+swears[j].r){
 				console.log('okay')
 				enemies[i].times2kill -=1;
-				swears[j].isHit = true;
+				swears[j].isGone = true;
 			}
 	}
 
@@ -93,12 +96,13 @@ function keyReleased(){
 	if(keyCode===RIGHT_ARROW || keyCode===LEFT_ARROW){
 		you.moveDir=0;
 	}
-
+	you.mouthOpen = false;
 }
 
 function keyPressed(){
 	if (key === ' '){
 	    var newSwear = new Swear(you.x);
+	    you.mouthOpen = true;
 		swears.push(newSwear);
 	} else if (keyCode===RIGHT_ARROW){
 			you.moveDir =1;

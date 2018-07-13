@@ -5,4 +5,4 @@ with included simple start-up screen and pause functionality.
 
 Self-designed pixel characters through GIMP.
 
-Play it [here](https://hapuri.github.io/first_game/)
+Play it [here](https://flee.github.io/first_game/)

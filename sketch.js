@@ -16,6 +16,8 @@ function preload(){
     youAvatar_right = loadImage('rsc/img/malechar_red.png');
 	youAvatar_left = loadImage('rsc/img/malechar_red_left.png');
 	enemyAvatar = loadImage('rsc/img/enemy.png');
+	enemyWomanAvatar = loadImage('rsc/img/angry_woman.png');
+	enemyManAvatar = loadImage('rsc/img/angry_man.png');
 
 	//fonts
 	headerFont = loadFont('rsc/font/veganstyle.ttf')
@@ -35,13 +37,15 @@ function setup(){
 
 function draw(){
 	background(51);
+	textAlign(CENTER);
+	rectMode(CENTER);
+	imageMode(CENTER);
+	fill(255);
 	if(startUp){
-		textAlign(CENTER);
-		rectMode(CENTER);
-		fill(255);
+		
+		
 		push();
 		textSize(32);
-		fill(255);
 		textFont(headerFont);
 		
 		text("Welcome", width/2, height*0.3);
@@ -106,7 +110,7 @@ function draw(){
 		//lvl 2: orig speed, 2 life
 		if(score>1000){
 		    if(frameCount%180==0){
-				var enemy = new Enemy(frameCount/480, 2 );
+				var enemy = new Enemy(1, 2 );
 				enemies.push(enemy);}
 		}
 

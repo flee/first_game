@@ -13,7 +13,7 @@ function preload(){
 	//avatars
 	youAvatar_open = loadImage('./rsc/img/female_head_open.png');
 	youAvatar_closed = loadImage('./rsc/img/female_head_closed.png');
-    youAvatar_right = loadImage('./rsc/img/malechar_red.png');
+	youAvatar_right = loadImage('./rsc/img/malechar_red.png');
 	youAvatar_left = loadImage('./rsc/img/malechar_red_left.png');
 	enemyAvatar = loadImage('./rsc/img/enemy.png');
 	enemyWomanAvatar = loadImage('./rsc/img/angry_woman.png');
